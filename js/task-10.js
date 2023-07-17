@@ -10,6 +10,8 @@ function createBoxes () {
   const amount = Number(input.value)
   const boxes = []
 
+  boxesContainer.innerHTML = "";
+
   for(let i = 0; i < amount; i += 1) {
      const size = 30 + i * 10;
      const color = getRandomHexColor();
@@ -19,11 +21,12 @@ function createBoxes () {
      box.style.backgroundColor = color;
      boxes.push(box);
     }
-
+    
     boxesContainer.append(...boxes)
 }
 
 function destroyBoxes() {
+    input.value = ''
     boxesContainer.innerHTML = "";
 }
 

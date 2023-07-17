@@ -1,9 +1,10 @@
-const ul = document.getElementById('categories')
-const liEl = ul.querySelectorAll('.item')
+const ulEl = document.querySelector('#categories')
 
-console.log(`Number of categories: ${liEl.length}`)
+console.log(`Number of categories: ${ulEl.children.length}`)
 
-liEl.forEach( (li) => {
+const ulElArray = [...ulEl.children]
+
+ulElArray.forEach( (li) => {
     const liName = li.querySelector('h2').textContent;
     const liItems = li.querySelectorAll('ul li');
 
